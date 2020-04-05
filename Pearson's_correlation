@@ -1,0 +1,9 @@
+library(ggplot2)
+library(hrbrthemes)
+setwd("G:/Manuscripts/IMR_total_proteomics/analysis")
+my.data<- read.csv("Pear_corrl_trial.csv",sep=",",header=TRUE,row.names=1)
+p3 <- ggplot(my.data, aes(x=C1_AVG, y=C2_AVG)) +
+  geom_point() +
+  geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE) +
+  theme_ipsum()
+p3
