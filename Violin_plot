@@ -1,0 +1,11 @@
+matrix<-read.csv("filename.csv",sep=",",header=TRUE,row.names=1)
+#calling your respective .csv file and data input onto a data matrix 
+matrix
+# call and check your data matrix
+violin<-ggplot(matrix,aes(x=text,y=logvalue))+ geom_violin(trim=FALSE)
+#making basic violin plot
+violin + theme_classic ()
+#changing violin theme
+plot<-violin + stat_summary(fun.y=mean, geom="point", shape=19, size=2) + scale_fill_grey() +theme_classic ()
+#plotting your violin with your specifications i.e. making your mean value as a dot and setting dimensions for the dot
+violin + geom_boxplot(width=0.1) + scale_fill_grey() + theme_classic() # for violins with boxplot
