@@ -1,0 +1,7 @@
+library(ggplot2)
+library(waffle)
+library(magrittr)
+library(hrbrthemes)
+library(dplyr)
+parts <- c(3706, 3424,1722,714)
+waffle(parts / 100, rows = 5)
